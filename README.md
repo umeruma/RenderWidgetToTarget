@@ -1,5 +1,10 @@
 # RenderWidgetToTarget
 
+Updated for UE4.20
+@umeruma
+
+---
+
 Sample project for rendering widget to render target
 http://pafuhana1213.hatenablog.com/entry/2017/05/21/171809
 
