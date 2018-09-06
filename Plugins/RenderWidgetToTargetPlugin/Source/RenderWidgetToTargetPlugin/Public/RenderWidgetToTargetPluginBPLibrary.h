@@ -29,11 +29,13 @@
 *	For more info on custom blueprint nodes visit documentation:
 *	https://wiki.unrealengine.com/Custom_Blueprint_Node_Creation
 */
-UCLASS()
-class URenderWidgetToTargetPluginBPLibrary : public UBlueprintFunctionLibrary
+UCLASS(config = RenderWidgetToTargetPlugin, meta = (DisplayName = "RenderWidgetToTargetPlugin"))
+class RENDERWIDGETTOTARGETPLUGIN_API URenderWidgetToTargetPluginBPLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 
-		UFUNCTION(Category = "UMG", BlueprintCallable)
-		static void DrawWidgetToTarget(UTextureRenderTarget2D * Target, UUserWidget * WidgetToRender, FVector2D DrawSize, bool UseGamma, TextureFilter Filter, float DeltaTime);
+public:
+
+	UFUNCTION(Category = "UMG", BlueprintCallable)
+	static void DrawWidgetToTarget(UTextureRenderTarget2D * Target, UUserWidget * WidgetToRender, FVector2D DrawSize, bool UseGamma, float DeltaTime);
 };

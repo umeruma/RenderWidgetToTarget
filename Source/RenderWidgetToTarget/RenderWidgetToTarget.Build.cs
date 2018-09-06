@@ -4,8 +4,10 @@ using UnrealBuildTool;
 
 public class RenderWidgetToTarget : ModuleRules
 {
-	public RenderWidgetToTarget(TargetInfo Target)
+	public RenderWidgetToTarget(ReadOnlyTargetRules Target) : base(Target)
 	{
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

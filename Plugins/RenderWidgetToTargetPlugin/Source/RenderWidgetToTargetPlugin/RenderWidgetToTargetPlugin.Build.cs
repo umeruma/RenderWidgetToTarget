@@ -4,55 +4,28 @@ using UnrealBuildTool;
 
 public class RenderWidgetToTargetPlugin : ModuleRules
 {
-	public RenderWidgetToTargetPlugin(TargetInfo Target)
-	{
-		
-		PublicIncludePaths.AddRange(
-			new string[] {
-				"RenderWidgetToTargetPlugin/Public"
-				
-				// ... add public include paths required here ...
-			}
-			);
-				
-		
-		PrivateIncludePaths.AddRange(
-			new string[] {
-				"RenderWidgetToTargetPlugin/Private",
-				
-				// ... add other private include paths required here ...
-			}
-			);
+    public RenderWidgetToTargetPlugin(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+
+        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
+
+
+        PrivateIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));
 			
 		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
 				"Core",
-				
-				// ... add other public dependencies that you statically link with here ...
-			}
-			);
-			
-		
-		PrivateDependencyModuleNames.AddRange(
-			new string[]
-			{
-				"CoreUObject",
-				"Engine",
-				"Slate",
-				"SlateCore",
+                "CoreUObject",
+                "Engine",
+                "Slate",
+                "SlateCore",
                 "UMG",
-
-				// ... add private dependencies that you statically link with here ...	
-			}
-			);
-		
-		
-		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
-				// ... add any modules that your module loads dynamically here ...
+                "Projects",
+                "RenderCore"
+				// ... add other public dependencies that you statically link with here ...
 			}
 			);
 	}
